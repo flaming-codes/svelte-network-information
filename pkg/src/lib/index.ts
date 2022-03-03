@@ -1,2 +1,2 @@
-import { networkInformationStore } from "./store"
-export { networkInformationStore }
+import { networkInformationStore } from "./store";
+export { networkInformationStore };

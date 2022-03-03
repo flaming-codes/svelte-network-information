@@ -1,6 +1,6 @@
 import { browser } from "$app/env";
-import { Subscriber } from "svelte/store";
-import { NetworkInformationStore } from "./types";
+import type { Subscriber } from "svelte/store";
+import type { NetworkInformationStore } from "./types";
 
 /**
  * Just a simple getter for an empty BatteryStore.
@@ -15,7 +15,9 @@ export function getInitialNetorkInformationStore(): NetworkInformationStore {
 export function subscribeToNetworkInformation(setter: Subscriber<NetworkInformationStore>) {
     // Noop on SSR.
     if (!browser) {
-        return;
+        console.log("-- no browser");
+
+        // return;
     }
 
     try {

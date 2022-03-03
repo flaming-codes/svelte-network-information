@@ -26,6 +26,7 @@
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
     "svelte-preprocess": "^4.10.1",
+    "svelte-network-information": "file:./../pkg/package/",
     "tslib": "^2.3.1",
     "typescript": "~4.5.4"
   },
