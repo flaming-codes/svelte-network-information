@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "svelte-network-information",
-  "description": "A store implementation for Svelte to use the Network Information API for PWAs",
+  "description": "A store implementation for Svelte to use the Network Information API in PWAs",
   "svelte": "index.js",
   "keywords": [
     "svelte network information api",
@@ -49,5 +49,8 @@
     "svelte2tsx": "^0.5.5",
     "tslib": "^2.3.1",
     "typescript": "~4.5.4"
+  },
+  "bugs": {
+    "url": "https://github.com/flaming-codes/svelte-network-information/issues"
   }
 }

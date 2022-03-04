@@ -15,9 +15,7 @@ export function getInitialNetorkInformationStore(): NetworkInformationStore {
 export function subscribeToNetworkInformation(setter: Subscriber<NetworkInformationStore>) {
     // Noop on SSR.
     if (!browser) {
-        console.log("-- no browser");
-
-        // return;
+        return;
     }
 
     try {
@@ -26,7 +24,8 @@ export function subscribeToNetworkInformation(setter: Subscriber<NetworkInformat
             navigator?.connection || navigator?.mozConnection || navigator?.webkitConnection;
 
         if (!connection) {
-            setter({ state: "not-supported" })
+            setter({ state: "not-supported" });
+            return;
         }
 
         const updateState = () => {
@@ -42,6 +41,9 @@ export function subscribeToNetworkInformation(setter: Subscriber<NetworkInformat
             });
         }
 
+        // Inital state set. No change might happen at all.
+        updateState();
+
         connection.addEventListener("change", updateState);
         window.addEventListener('online', updateState);
         window.addEventListener('offline', updateState);
@@ -52,7 +54,6 @@ export function subscribeToNetworkInformation(setter: Subscriber<NetworkInformat
             window.removeEventListener('offline', updateState);
         };
     } catch (error) {
-        console.error(error);
         setter({ state: "error" })
     }
 }
