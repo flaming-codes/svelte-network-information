@@ -19,18 +19,18 @@ This library provides a simple readable store that automatically subscribes to e
 
 ```svelte
 <script lang="ts">
-	import { networkInformationStore as store } from 'svelte-network-information';
+  import { networkInformationStore as store } from 'svelte-network-information';
 </script>
 
 <ul>
-	<li>State: {$store.state}</li>
-	<li>connectivity: {$store.connectivity}</li>
-	<li>downlink: {$store.downlink}</li>
-	<li>downlinkMax: {$store.downlinkMax}</li>
-	<li>effectiveType: {$store.effectiveType}</li>
-	<li>rtt: {$store.rtt}</li>
-	<li>saveData: {$store.saveData}</li>
-	<li>type: {$store.type}</li>
+  <li>State: {$store.state}</li>
+  <li>connectivity: {$store.connectivity}</li>
+  <li>downlink: {$store.downlink}</li>
+  <li>downlinkMax: {$store.downlinkMax}</li>
+  <li>effectiveType: {$store.effectiveType}</li>
+  <li>rtt: {$store.rtt}</li>
+  <li>saveData: {$store.saveData}</li>
+  <li>type: {$store.type}</li>
 </ul>
 ```
 
@@ -40,10 +40,10 @@ To subscribe to changes for only a specific selection of values, simply create a
 
 ```svelte
 <script lang="ts">
-	import { networkInformationStore } from 'svelte-network-information';
-	import { derived } from 'svelte/store';
+  import { networkInformationStore } from 'svelte-network-information';
+  import { derived } from 'svelte/store';
 
-	const rtt = derived(networkInformationStore, ($store) => $store.rtt);
+  const rtt = derived(networkInformationStore, ($store) => $store.rtt);
 </script>
 
 rtt: {$rtt}
