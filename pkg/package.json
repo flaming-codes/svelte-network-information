@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.2",
   "name": "svelte-network-information",
   "description": "A store implementation for Svelte to use the Network Information API in PWAs",
   "svelte": "index.js",
